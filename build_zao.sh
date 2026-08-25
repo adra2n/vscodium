@@ -52,6 +52,10 @@ APP_EXT="VSCode-darwin-x64/Zao.app/Contents/Resources/app/extensions/dsh-agent"
 if [ -d "$DSH_AGENT_SRC" ] && [ -d "VSCode-darwin-x64/Zao.app/Contents/Resources/app" ]; then
   mkdir -p "$APP_EXT/out"
   cp "$DSH_AGENT_SRC"/out/*.js "$APP_EXT/out/"
+  # webview 与 package.json 在 prepare 阶段注入，此后源码可能又更新（如向导 UI），一并刷新
+  mkdir -p "$APP_EXT/webview"
+  cp "$DSH_AGENT_SRC"/webview/*.js "$APP_EXT/webview/"
+  cp "$DSH_AGENT_SRC"/package.json "$APP_EXT/package.json"
   echo "Copied compiled dsh-agent into app: $APP_EXT/out ($(ls "$APP_EXT/out" | wc -l | tr -d ' ') files)"
 fi
 
