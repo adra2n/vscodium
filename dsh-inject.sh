@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Injects the Codon (DSH) agent extension into the freshly-cloned vscode source
+# Injects the Zao (DSH) agent extension into the freshly-cloned vscode source
 # so it is compiled by the vscode build and shipped as a built-in extension.
 # Runs from the vscode/ working dir (called by prepare_vscode.sh).
 #
 # NOTE: the zero-dependency DSH runtime is NOT handled here. After packaging,
 # run dsh-vscode-ide/scripts/vendor-dsh.sh <app>/Contents/Resources/app to
 # vendor @deepseek-ai/dsh into app/dsh-runtime/ (the extension auto-detects it
-# and starts the gateway via the Codon binary in Node mode).
+# and starts the gateway via the Zao binary in Node mode).
 set -e
 
 SRC="${DSH_AGENT_SRC:-../dsh-agent-extension}"
@@ -46,14 +46,14 @@ EOF
 rm -rf "${DST}/node_modules" "${DST}/out" "${DST}/package-lock.json"
 
 # --- Brand icons (P4.4): overwrite the stock VSCodium/vscode artwork so every
-# build ships Codon branding. Assets live in the extension repo under media/brand.
+# build ships Zao branding. Assets live in the extension repo under media/brand.
 BRAND_DIR="${DSH_AGENT_SRC%/}/media/brand"
-if [ -f "$BRAND_DIR/codon.icns" ]; then
-  cp "$BRAND_DIR/codon.icns" "resources/darwin/code.icns"
-  cp "$BRAND_DIR/codon.ico" "resources/win32/code.ico"
-  cp "$BRAND_DIR/codon-512.png" "resources/linux/code.png"
+if [ -f "$BRAND_DIR/zao.icns" ]; then
+  cp "$BRAND_DIR/zao.icns" "resources/darwin/code.icns"
+  cp "$BRAND_DIR/zao.ico" "resources/win32/code.ico"
+  cp "$BRAND_DIR/zao-512.png" "resources/linux/code.png"
   for f in resources/linux/code_*.png; do
-    [ -f "$f" ] && cp "$BRAND_DIR/codon-512.png" "$f"
+    [ -f "$f" ] && cp "$BRAND_DIR/zao-512.png" "$f"
   done
   echo "dsh-inject: brand icons applied (darwin/win32/linux)"
 fi
