@@ -42,10 +42,10 @@ setpath "product" "introductoryVideosUrl" "https://go.microsoft.com/fwlink/?link
 setpath "product" "keyboardShortcutsUrlLinux" "https://go.microsoft.com/fwlink/?linkid=832144"
 setpath "product" "keyboardShortcutsUrlMac" "https://go.microsoft.com/fwlink/?linkid=832143"
 setpath "product" "keyboardShortcutsUrlWin" "https://go.microsoft.com/fwlink/?linkid=832145"
-setpath "product" "licenseUrl" "https://github.com/VSCodium/vscodium/blob/master/LICENSE"
+setpath "product" "licenseUrl" "https://github.com/codon-ide/codon/blob/main/LICENSE"
 setpath_json "product" "linkProtectionTrustedDomains" '["https://open-vsx.org"]'
 setpath "product" "releaseNotesUrl" "https://go.microsoft.com/fwlink/?LinkID=533483#vscode"
-setpath "product" "reportIssueUrl" "https://github.com/VSCodium/vscodium/issues/new"
+setpath "product" "reportIssueUrl" "https://github.com/codon-ide/codon/issues/new"
 setpath "product" "requestFeatureUrl" "https://go.microsoft.com/fwlink/?LinkID=533482"
 setpath "product" "tipsAndTricksUrl" "https://go.microsoft.com/fwlink/?linkid=852118"
 setpath "product" "twitterUrl" "https://go.microsoft.com/fwlink/?LinkID=533687"
@@ -65,60 +65,62 @@ if [[ "${DISABLE_UPDATE}" != "yes" ]]; then
 fi
 
 if [[ "${VSCODE_QUALITY}" == "insider" ]]; then
-  setpath "product" "nameShort" "VSCodium - Insiders"
-  setpath "product" "nameLong" "VSCodium - Insiders"
-  setpath "product" "applicationName" "codium-insiders"
-  setpath "product" "dataFolderName" ".vscodium-insiders"
-  setpath "product" "linuxIconName" "vscodium-insiders"
+  setpath "product" "nameShort" "Codon - Insiders"
+  setpath "product" "nameLong" "Codon - Insiders"
+  setpath "product" "applicationName" "codon-insiders"
+  setpath "product" "dataFolderName" ".codon-insiders"
+  setpath "product" "linuxIconName" "codon-insiders"
   setpath "product" "quality" "insider"
-  setpath "product" "urlProtocol" "vscodium-insiders"
-  setpath "product" "serverApplicationName" "codium-server-insiders"
-  setpath "product" "serverDataFolderName" ".vscodium-server-insiders"
-  setpath "product" "darwinBundleIdentifier" "com.vscodium.VSCodiumInsiders"
-  setpath "product" "win32AppUserModelId" "VSCodium.VSCodiumInsiders"
-  setpath "product" "win32DirName" "VSCodium Insiders"
-  setpath "product" "win32MutexName" "vscodiuminsiders"
-  setpath "product" "win32NameVersion" "VSCodium Insiders"
-  setpath "product" "win32RegValueName" "VSCodiumInsiders"
-  setpath "product" "win32ShellNameShort" "VSCodium Insiders"
-  setpath "product" "win32AppId" "{{EF35BB36-FA7E-4BB9-B7DA-D1E09F2DA9C9}"
-  setpath "product" "win32x64AppId" "{{B2E0DDB2-120E-4D34-9F7E-8C688FF839A2}"
-  setpath "product" "win32arm64AppId" "{{44721278-64C6-4513-BC45-D48E07830599}"
-  setpath "product" "win32UserAppId" "{{ED2E5618-3E7E-4888-BF3C-A6CCC84F586F}"
-  setpath "product" "win32x64UserAppId" "{{20F79D0D-A9AC-4220-9A81-CE675FFB6B41}"
-  setpath "product" "win32arm64UserAppId" "{{2E362F92-14EA-455A-9ABD-3E656BBBFE71}"
-  setpath "product" "tunnelApplicationName" "codium-insiders-tunnel"
-  setpath "product" "win32TunnelServiceMutex" "vscodiuminsiders-tunnelservice"
-  setpath "product" "win32TunnelMutex" "vscodiuminsiders-tunnel"
-  setpath "product" "win32ContextMenu.x64.clsid" "90AAD229-85FD-43A3-B82D-8598A88829CF"
-  setpath "product" "win32ContextMenu.arm64.clsid" "7544C31C-BDBF-4DDF-B15E-F73A46D6723D"
+  setpath "product" "urlProtocol" "codon-insiders"
+  setpath "product" "serverApplicationName" "codon-server-insiders"
+  setpath "product" "serverDataFolderName" ".codon-server-insiders"
+  setpath "product" "dataFolderName" ".codon-insiders"
+  setpath "product" "darwinBundleIdentifier" "com.codon.CodonInsiders"
+  setpath "product" "win32AppUserModelId" "Codon.CodonInsiders"
+  setpath "product" "win32DirName" "Codon Insiders"
+  setpath "product" "win32MutexName" "codoninsiders"
+  setpath "product" "win32NameVersion" "Codon Insiders"
+  setpath "product" "win32RegValueName" "CodonInsiders"
+  setpath "product" "win32ShellNameShort" "Codon Insiders"
+  setpath "product" "win32AppId" "{{4AEC4738-32C0-4C10-9949-07F5E3870E7C}"
+  setpath "product" "win32x64AppId" "{{E10F55AD-8282-481F-9696-FDA04383372C}"
+  setpath "product" "win32arm64AppId" "{{49658453-5142-45A1-8D8D-EAACA1E5E9B3}"
+  setpath "product" "win32UserAppId" "{{73087B6B-58B6-4294-9661-225D16F95531}"
+  setpath "product" "win32x64UserAppId" "{{41C920D8-E13B-4723-9BC7-9703FF612DEA}"
+  setpath "product" "win32arm64UserAppId" "{{77CB4BFB-69D1-427A-B231-80C8D4B44854}"
+  setpath "product" "tunnelApplicationName" "codon-insiders-tunnel"
+  setpath "product" "win32TunnelServiceMutex" "codoninsiders-tunnelservice"
+  setpath "product" "win32TunnelMutex" "codoninsiders-tunnel"
+  setpath "product" "win32ContextMenu.x64.clsid" "E0CDE833-CDE0-4594-B0AB-5751C202C1F1"
+  setpath "product" "win32ContextMenu.arm64.clsid" "89E84112-C7FA-44E9-B405-3D142B123612"
 else
-  setpath "product" "nameShort" "VSCodium"
-  setpath "product" "nameLong" "VSCodium"
-  setpath "product" "applicationName" "codium"
-  setpath "product" "linuxIconName" "vscodium"
+  setpath "product" "nameShort" "Codon"
+  setpath "product" "nameLong" "Codon"
+  setpath "product" "applicationName" "codon"
+  setpath "product" "linuxIconName" "codon"
   setpath "product" "quality" "stable"
-  setpath "product" "urlProtocol" "vscodium"
-  setpath "product" "serverApplicationName" "codium-server"
-  setpath "product" "serverDataFolderName" ".vscodium-server"
-  setpath "product" "darwinBundleIdentifier" "com.vscodium"
-  setpath "product" "win32AppUserModelId" "VSCodium.VSCodium"
-  setpath "product" "win32DirName" "VSCodium"
-  setpath "product" "win32MutexName" "vscodium"
-  setpath "product" "win32NameVersion" "VSCodium"
-  setpath "product" "win32RegValueName" "VSCodium"
-  setpath "product" "win32ShellNameShort" "VSCodium"
-  setpath "product" "win32AppId" "{{763CBF88-25C6-4B10-952F-326AE657F16B}"
-  setpath "product" "win32x64AppId" "{{88DA3577-054F-4CA1-8122-7D820494CFFB}"
-  setpath "product" "win32arm64AppId" "{{67DEE444-3D04-4258-B92A-BC1F0FF2CAE4}"
-  setpath "product" "win32UserAppId" "{{0FD05EB4-651E-4E78-A062-515204B47A3A}"
-  setpath "product" "win32x64UserAppId" "{{2E1F05D1-C245-4562-81EE-28188DB6FD17}"
-  setpath "product" "win32arm64UserAppId" "{{57FD70A5-1B8D-4875-9F40-C5553F094828}"
-  setpath "product" "tunnelApplicationName" "codium-tunnel"
-  setpath "product" "win32TunnelServiceMutex" "vscodium-tunnelservice"
-  setpath "product" "win32TunnelMutex" "vscodium-tunnel"
-  setpath "product" "win32ContextMenu.x64.clsid" "D910D5E6-B277-4F4A-BDC5-759A34EEE25D"
-  setpath "product" "win32ContextMenu.arm64.clsid" "4852FC55-4A84-4EA1-9C86-D53BE3DF83C0"
+  setpath "product" "urlProtocol" "codon"
+  setpath "product" "serverApplicationName" "codon-server"
+  setpath "product" "serverDataFolderName" ".codon-server"
+  setpath "product" "dataFolderName" ".codon"
+  setpath "product" "darwinBundleIdentifier" "com.codon"
+  setpath "product" "win32AppUserModelId" "Codon.Codon"
+  setpath "product" "win32DirName" "Codon"
+  setpath "product" "win32MutexName" "codon"
+  setpath "product" "win32NameVersion" "Codon"
+  setpath "product" "win32RegValueName" "Codon"
+  setpath "product" "win32ShellNameShort" "Codon"
+  setpath "product" "win32AppId" "{{41C920D8-E13B-4723-9BC7-9703FF612DEA}"
+  setpath "product" "win32x64AppId" "{{77CB4BFB-69D1-427A-B231-80C8D4B44854}"
+  setpath "product" "win32arm64AppId" "{{E0CDE833-CDE0-4594-B0AB-5751C202C1F1}"
+  setpath "product" "win32UserAppId" "{{89E84112-C7FA-44E9-B405-3D142B123612}"
+  setpath "product" "win32x64UserAppId" "{{768D5791-3361-4328-8BD7-92EE71AE8A6A}"
+  setpath "product" "win32arm64UserAppId" "{{ABB509CF-BA7E-49F1-A162-DA1B22150062}"
+  setpath "product" "tunnelApplicationName" "codon-tunnel"
+  setpath "product" "win32TunnelServiceMutex" "codon-tunnelservice"
+  setpath "product" "win32TunnelMutex" "codon-tunnel"
+  setpath "product" "win32ContextMenu.x64.clsid" "45001264-0DE6-4B32-8E2E-DF2CB462C90E"
+  setpath "product" "win32ContextMenu.arm64.clsid" "05FA6EDE-BC35-4B49-9414-ED6F1E7EC1DE"
 fi
 
 setpath_json "product" "tunnelApplicationConfig" '{}'
@@ -143,7 +145,7 @@ echo "GLOBAL_DIRNAME=\"${GLOBAL_DIRNAME}\""
 echo "ORG_NAME=\"${ORG_NAME}\""
 echo "TUNNEL_APP_NAME=\"${TUNNEL_APP_NAME}\""
 
-if [[ "${DISABLE_UPDATE}" == "yes" ]]; then
+if [[ "${DISABLE_UPDATE}" == "yes" && -f ../patches/00-update-disable.patch.yet ]]; then
   mv ../patches/00-update-disable.patch.yet ../patches/00-update-disable.patch
 fi
 
@@ -180,6 +182,11 @@ for file in ../patches/user/*.patch; do
     apply_patch "${file}"
   fi
 done
+
+# Inject the Codon (DSH) agent as a built-in extension.
+if [[ -f "../dsh-inject.sh" ]]; then
+  bash ../dsh-inject.sh
+fi
 # }}}
 
 set -x
@@ -233,7 +240,7 @@ cp package.json{,.bak}
 
 setpath "package" "version" "${RELEASE_VERSION%-insider}"
 
-replace 's|Microsoft Corporation|VSCodium|' package.json
+replace 's|Microsoft Corporation|Codon|' package.json
 
 cp resources/server/manifest.json{,.bak}
 
@@ -241,8 +248,8 @@ if [[ "${VSCODE_QUALITY}" == "insider" ]]; then
   setpath "resources/server/manifest" "name" "VSCodium - Insiders"
   setpath "resources/server/manifest" "short_name" "VSCodium - Insiders"
 else
-  setpath "resources/server/manifest" "name" "VSCodium"
-  setpath "resources/server/manifest" "short_name" "VSCodium"
+  setpath "resources/server/manifest" "name" "Codon"
+  setpath "resources/server/manifest" "short_name" "Codon"
 fi
 
 # announcements
@@ -250,8 +257,8 @@ replace "s|\\[\\/\\* BUILTIN_ANNOUNCEMENTS \\*\\/\\]|$( tr -d '\n' < ../announce
 
 ../undo_telemetry.sh
 
-replace 's|Microsoft Corporation|VSCodium|' build/lib/electron.ts
-replace 's|([0-9]) Microsoft|\1 VSCodium|' build/lib/electron.ts
+replace 's|Microsoft Corporation|Codon|' build/lib/electron.ts
+replace 's|([0-9]) Microsoft|\1 Codon|' build/lib/electron.ts
 
 if [[ "${OS_NAME}" == "linux" ]]; then
   # microsoft adds their apt repo to sources
